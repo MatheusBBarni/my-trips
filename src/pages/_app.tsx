@@ -1,13 +1,15 @@
-import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { AppProps } from 'next/app'
+import NextNProgress from 'nextjs-progressbar'
+import { DefaultSeo } from 'next-seo'
 
+import SEO from '../../next-seo.config'
 import GlobalStyles from 'styles/global'
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>My Trips</title>
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -18,12 +20,15 @@ function App({ Component, pageProps }: AppProps) {
           crossOrigin=""
         />
         <meta name="theme-color" content="#06092B" />
-        <meta
-          name="description"
-          content="A simple project with NextJS, GraphQL and GraphCMS"
-        />
       </Head>
+      <DefaultSeo {...SEO} />
       <GlobalStyles />
+      <NextNProgress
+        height={3}
+        color="#f231a5"
+        stopDelayMs={200}
+        startPosition={0.3}
+      />
       <Component {...pageProps} />
     </>
   )
