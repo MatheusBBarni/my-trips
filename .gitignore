@@ -36,3 +36,7 @@ yarn-error.log*
 # sw stuff
 public/sw.js
 public/workbox-*.js
+
+# next-sitemap
+public/robots.txt
+public/sitemap.xml
